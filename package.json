@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "npm run serve:single-spa:angular-app2",
+    "build": "npm run build:single-spa:angular-app2",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:single-spa:angular-app2": "ng build angular-app2 --configuration production",
+    "serve:single-spa:angular-app2": "ng s --project angular-app2 --disable-host-check --port 4201 --live-reload false"
   },
   "private": true,
   "dependencies": {
@@ -19,10 +21,13 @@
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
     "rxjs": "~7.8.0",
+    "single-spa": ">=4.0.0",
+    "single-spa-angular": "^8.1.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "16.0.0-beta.1",
     "@angular-devkit/build-angular": "^16.0.2",
     "@angular/cli": "~16.0.2",
     "@angular/compiler-cli": "^16.0.0",
@@ -33,6 +38,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
+    "style-loader": "^3.3.1",
     "typescript": "~5.0.2"
   }
 }
