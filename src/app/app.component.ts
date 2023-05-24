@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { state$ } from '@app/util';
 
 @Component({
   selector: 'app-root2',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  state2$ = state$;
   title = 'angular-app2';
 }
